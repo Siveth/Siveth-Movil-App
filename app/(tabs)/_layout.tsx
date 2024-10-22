@@ -4,6 +4,8 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import Entypo from '@expo/vector-icons/Entypo';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -19,7 +21,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <Entypo name={focused ? 'home' : 'home'} size={24} color={color} />
           ),
         }}
       />
@@ -28,7 +30,7 @@ export default function TabLayout() {
         options={{
           title: 'Inicio de sesión',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <Entypo name={focused ? "login" : 'login'} size={24} color={color} />
           ),
         }}
       />
@@ -38,7 +40,17 @@ export default function TabLayout() {
         options={{
           title: 'Registro',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <Entypo name={focused ? 'add-user' : 'add-user'} size={24} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Servicios"
+        options={{
+          title: 'Servicios',
+          tabBarIcon: ({ color, focused }) => (
+            <FontAwesome5 name={focused ? 'toolbox' : 'toolbox'} size={24} color={color} />
           ),
         }}
       />

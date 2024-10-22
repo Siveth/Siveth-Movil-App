@@ -107,15 +107,16 @@ export default function Login({ title }: { title: string }) {
 }
 
 const styles = StyleSheet.create({
-    container1: {
-        flex: 1,
-        backgroundColor: '#f5f5f5',
-      },
+  container1: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     padding: 16,
     backgroundColor: '#fff',
+    
   },
   innerContainer: {
     alignItems: 'center',
@@ -136,9 +137,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#4CAF50',
+    alignItems: 'center',
+    margin: 15,
     padding: 10,
     borderRadius: 5,
-    alignItems: 'center',
+    marginHorizontal: 15,
+   
   },
   buttonDisabled: {
     backgroundColor: '#ccc',
