@@ -56,6 +56,7 @@ export default function Login({ title }: { title: string }) {
       );
       const responseData = loginResponse.data;
       if (loginResponse.status === 200 && responseData.status === 'success') {
+        Alert.alert('Éxito', 'Inicio de sesión exitoso.');
         router.push(responseData.redirectUrl);
       } else {
         Alert.alert('Error', 'Error en el inicio de sesión.');
@@ -68,9 +69,8 @@ export default function Login({ title }: { title: string }) {
 
   return (
     <SafeAreaView style={styles.container1}>
-        <Header imageUrl="https://viajesramos.s3.us-east-2.amazonaws.com/logo.png" />
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
-        
+      <Header imageUrl="https://viajesramos.s3.us-east-2.amazonaws.com/logo.png" />
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
         <View style={styles.innerContainer}>
           <Text style={styles.title}>{title}</Text>
           <TextInput
@@ -103,7 +103,6 @@ export default function Login({ title }: { title: string }) {
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
-    
   );
 }
 
