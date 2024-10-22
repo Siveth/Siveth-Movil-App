@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet,ScrollView,TouchableOpacity, Alert  } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Header from '../../components/Header';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native';
 
 const Registro: React.FC = () => {
   const [nombre, setNombre] = useState('');
@@ -44,7 +44,7 @@ const Registro: React.FC = () => {
 
         
         <View style={styles.container}>
-      <Text style={styles.title}>Crear Cuenta</Text>
+      <Text style={styles.title}>Crear cuenta </Text>
 
       <View style={styles.inputGroup}>
         <Text>Nombre</Text>

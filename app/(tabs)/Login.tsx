@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvo
 import Axios from 'axios';
 import { useRouter } from 'expo-router';
 import Header from '../../components/Header';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native';
 
 export default function Login({ title }: { title: string }) {
   const [email, setEmail] = useState('');
@@ -72,7 +72,7 @@ export default function Login({ title }: { title: string }) {
         <KeyboardAvoidingView style={styles.container} behavior="padding">
         
         <View style={styles.innerContainer}>
-          <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>Inicio de sesión </Text>
           <TextInput
             style={styles.input}
             placeholder="Correo Electrónico"
@@ -94,29 +94,29 @@ export default function Login({ title }: { title: string }) {
             <Text style={styles.error}>Botón bloqueado por {timeLeft} segundos</Text>
           )}
           <TouchableOpacity
-            style={[styles.button, disableButton && styles.buttonDisabled]}
-            onPress={handleSubmit}
-            disabled={disableButton}
-          >
-            <Text style={styles.buttonText}>Iniciar sesión</Text>
-          </TouchableOpacity>
+          style={[styles.button, disableButton && styles.buttonDisabled]}
+          onPress={handleSubmit}
+          disabled={disableButton}
+        >
+          <Text style={styles.buttonText}>Iniciar sesión</Text>
+        </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
     
   );
 }
-
 const styles = StyleSheet.create({
-    container1: {
-        flex: 1,
-        backgroundColor: '#f5f5f5',
-      },
+  container1: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     padding: 16,
     backgroundColor: '#fff',
+    
   },
   innerContainer: {
     alignItems: 'center',
@@ -137,9 +137,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#4CAF50',
+    alignItems: 'center',
+    margin: 15,
     padding: 10,
     borderRadius: 5,
-    alignItems: 'center',
+    marginHorizontal: 15,
+   
   },
   buttonDisabled: {
     backgroundColor: '#ccc',
