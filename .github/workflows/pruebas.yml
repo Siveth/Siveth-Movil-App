@@ -1,0 +1,45 @@
+name: movil CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - master
+      - MargeProcess-Release
+  pull_request:
+    branches:
+      - master
+      - MargeProcess-Release
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest Tests
+        run: npm test
+
+      - name: Run Tests
+        run: echo "Desplegando la aplicación..."
