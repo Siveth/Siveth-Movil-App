@@ -3,12 +3,12 @@ name: movil CI/CD Workflow
 on:
   push:
     branches:
-      - master
-      - MargeProcess-Release
+      - main
+      
   pull_request:
     branches:
-      - master
-      - MargeProcess-Release
+      - main
+      
   workflow_dispatch:
 
 jobs:
