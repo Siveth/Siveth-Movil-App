@@ -10,7 +10,8 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": { "@/*": ["./*"] }
   },
   "include": [
     "src/**/*",

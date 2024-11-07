@@ -4,7 +4,7 @@ import Login from '../app/(tabs)/Login'; // Asegúrate de que esta ruta sea corr
 
 describe('Login Screen', () => {
   it('renders login form correctly', () => {
-    const { getByPlaceholderText, getByText } = render(<Login />);
+    const { getByPlaceholderText, getByText } = render(<Login/>);
 
     expect(getByPlaceholderText(/username/i)).toBeTruthy();
     expect(getByPlaceholderText(/password/i)).toBeTruthy();
